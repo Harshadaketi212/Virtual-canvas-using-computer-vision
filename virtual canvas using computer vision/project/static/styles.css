@@ -1,0 +1,255 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+html{
+    scroll-behavior: smooth;
+}
+
+#content {
+    margin-bottom: 50px; /* Height of the fixed navbar */
+}
+
+.navbar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    padding: 10px 0;
+    z-index: 1000;
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.navbar ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.navbar ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.navbar ul li a:hover {
+    background-color: #555;
+}
+
+.page {
+    padding: 20px;
+}
+
+.home-para{
+    font-size: 20px;
+    color: rgb(192, 243, 7);
+    font-weight: 700;
+    
+}
+
+.home-page {
+    background-color: #f5f5f5; /* Background color for the home page */
+    background-image: url('gallery.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color:whitesmoke; /* Text color for the home page */
+    text-align: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    isolation: isolate;
+}
+
+
+.home-page::after{
+    content: '';
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    background-color: rgba(43, 38, 38, 0.5);
+    z-index: -1;
+}
+
+.home-page .content {
+    max-width: 600px;
+}
+
+.home-page h1 {
+    font-size: 3rem;
+}
+
+.home-page p {
+    margin-bottom: 20px;
+}
+
+.home-page button {
+    padding: 10px 20px;
+    background-color: #ff4500;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-size: 15px;
+}
+
+.home-page button:hover {
+    background-color: #e63946;
+}
+
+.home-card{
+    width: 450px;
+    text-align: left;
+    background-color: #555555bb;
+    padding: 10px;
+    border-radius: 10px;
+}
+.home-cards{
+    position: absolute;
+    bottom:-120px;
+    display: flex;
+    gap:10px;
+    cursor: pointer;
+    transition: all 1s ease;
+   
+    
+}
+.home-card p{
+    line-height: 23px;
+}
+.home-card h3{
+    color: aqua;
+}
+
+.home-card:hover{
+    transform: scale(1.05);
+}
+
+/* Add or modify styles as needed for the about page */
+
+.about-page{
+   margin-top: 120px;
+
+}
+
+.about-nav {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.about-nav button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.about-nav button.active {
+    background-color: #555;
+}
+
+.about-section {
+    padding: 20px;
+}
+
+.about-section h2 {
+    margin-bottom: 10px;
+}
+
+.about-section p {
+    margin-bottom: 20px;
+    line-height: 40px;
+    width: 90%;
+    font-size: 20px;
+}
+
+/* Add or modify styles as needed for the prediction page */
+
+.prediction-page{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap:40px;
+    align-items: center;
+    background-color: azure;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment:fixed;
+    position: relative;
+    isolation: isolate;
+
+    
+    
+}
+
+.prediction-page::after{
+    content: '';
+    position: absolute;
+    background-color: rgba(47, 41, 41, 0.61);
+    inset: 0;
+    z-index: -1;
+}
+
+
+.prediction-page button{
+    padding: 10px 20px;
+    background-color: #ff4500;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-size: 15px;
+
+}
+.home-download{
+  position: absolute;
+  top:10px;
+  right: 20px;
+}
+
+.home-download a{
+    text-decoration: none;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+th {
+    background-color: #f2f2f2;
+    color: #333;
+}
+/* Table hover effect */
+tbody tr:hover {
+    background-color: #f5f5f5;
+}

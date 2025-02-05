@@ -1,0 +1,187 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Air Canvas</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div id="content">
+      <div id="home" class="page home-page">
+        <div class="home-download">
+          {% if user.is_authenticated %}
+          <a href="{% url 'download_pdf' %}" download>
+            <button>Document</button>
+          </a>
+
+          <a href="{% url 'download_python_file' %}" download>
+            <button>Code</button>
+          </a>
+          {% else %}
+          <a href="{% url 'login' %}" >
+            <button>Document</button>
+          </a>
+          <a href="{% url 'login' %}">
+            <button>Code</button>
+          </a>
+          {% endif %}
+
+
+
+
+        </div>
+        <div class="content">
+          <h1 id="mainText"></h1>
+          <p class="home-para">Explore the world of technology</p>
+          <button id="predictionBtn">Detection</button>
+        </div>
+        <div class="home-cards">
+          <div class="home-card">
+            <h3>Why choose this</h3>
+            <p>
+              Choosing a project like AirCanvas can be motivated by several
+              factors. It combines various technologies like Python, OpenCV,
+              Mediapipe, gTTS, and EasyOCR, making it a comprehensive learning
+              experience in computer vision, natural language processing, and
+              speech synthesis. Additionally, it offers a creative and
+              interactive way to explore real-time text recognition and speech
+              generation, which can be exciting and engaging for both developers
+              and users.
+            </p>
+          </div>
+
+          <div class="home-card">
+            <h3>Technologies Used</h3>
+            <p>
+              <b>Python:</b> Used as the primary programming language for
+              development. <b>OpenCV:</b> Employed for computer vision tasks,
+              such as capturing and processing video frames.
+              <b>Mediapipe:</b> Utilized for hand tracking and gesture
+              recognition, enabling writing in the air.
+              <b>gTTS (Google Text-to-Speech):</b> Used to convert the
+              recognized text into speech. <b>EasyOCR:</b> Applied for optical
+              character recognition (OCR), assisting in text prediction from
+              hand gestures.
+            </p>
+          </div>
+
+          <div class="home-card">
+            <h3>Scientific Exploration</h3>
+            <p>
+              <b>Computer Vision:</b> Investigating real-time hand tracking and
+              gesture recognition using OpenCV and Mediapipe to enable writing
+              in the air. <b>Natural Language Processing (NLP):</b> Exploring
+              text prediction and recognition of handwritten characters through
+              EasyOCR, enhancing the user experience.
+              <b>Speech Synthesis:</b> Utilizing gTTS to convert the recognized
+              text into speech, demonstrating the integration of speech
+              technologies with visual inputs from the camera.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div id="about" class="page about-page">
+        <div class="about-nav">
+          <button id="abstractBtn" class="active">Abstract</button>
+          <button id="teamBtn">Team Members</button>
+        </div>
+        <div id="abstract" class="about-section">
+          <h2>Abstract</h2>
+          <p>
+            Drawing has long been an important component of the artistic
+            process, assisting artists in planning and expressing their ideas.
+            People used to draw on stones with charcoal or tree branches, as
+            shown in cave paintings, to transmit information about animals.
+            Today, we can draw on computers, smartphones, and other gadgets. The
+            Air Canvas is an intriguing concept that allows you to create in the
+            air without using a keyboard or mouse. It detects movement using
+            Python and user-friendly modules such as OpenCV and MediaPipe. We
+            intend to improve it by incorporating the EasyOCR, which will allow
+            us to recognise words drawn in the air. The project will also
+            include a text-to-speech feature to vocalise recognised words,
+            increasing its versatility and accessibility.
+          </p>
+        </div>
+        <div id="team" class="about-section" style="display: none">
+          <h2>Team Members</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>S.no</th>
+                <th>Name</th>
+                <th>Roll Number</th>
+                <th>Role</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>P T S S Mahalakshmi</td>
+                <td>20P31A05B0</td>
+                <td>Back end developer</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>K S D Mahalakshmi</td>
+                <td>20P31A0593</td>
+                <td>UI Design </td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>D Harsha vardhan</td>
+                <td>20P31A0577</td>
+                <td>Front-end development</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>K Lova raju</td>
+                <td>20P31A0591</td>
+                <td>Testing</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div id="prediction" class="prediction-page">
+        <h1>Make Detection</h1>
+        {% if user.is_authenticated %}
+        <a href="{% url 'detection' %}">
+            <button>detection</button>
+          </a>
+        {% else %}
+        <a href="{% url 'login' %}">
+          <button>detection</button>
+        </a>
+        {% endif %}
+        
+      </div>
+    </div>
+
+    <nav class="navbar">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#prediction">Detection</a></li>
+        {% if user.is_authenticated %}
+        <li><a href="{% url 'logout' %}">logout</a></li>
+        {% else%}
+        <li><a href="{% url 'login' %}">login</a></li>
+        {% endif %}
+      </ul>
+    </nav>
+
+    <script src="{% static 'index.js' %}"></script>
+  </body>
+</html>
