@@ -1,6 +1,7 @@
 **Virtual canvas using computer vision:**
 
 ->  This project is a Virtual Canvas drawing that allows users to draw on the screen using hand gestures, powered by "computer Vision" techniques. 
+
 ->  It uses "Open CV" and "media Pipe" to track hand movements and enable interaction with a digital canvas without the need for physical input devices.  
 
 *Features:*
