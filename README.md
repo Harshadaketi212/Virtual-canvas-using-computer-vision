@@ -38,16 +38,16 @@ This project is powered by **OpenCV** and **MediaPipe** for real-time **hand tra
 
 ## 📥 Installation Guide
 
-#### **🔹 Step 1: Clone the Repository**
+ **🔹 Step 1: Clone the Repository**
 ```bash
 git clone https://github.com/harsharen21/virtual-canvas.git
 cd virtual-canvas
 
-#### **🔹 Step 2:  Install Dependencies**
+ **🔹 Step 2:  Install Dependencies**
 ```bash
 pip install opencv-python mediapipe numpy
 
-#### **🔹 Step 3:  Run the Application**
+ **🔹 Step 3:  Run the Application**
 python virtual_canvas.py
 
 🖥️ Usage Instructions
